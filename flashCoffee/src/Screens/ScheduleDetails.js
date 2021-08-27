@@ -34,6 +34,13 @@ const styles= StyleSheet.create({
         borderRadius:8,
         padding:10,
         marginBottom:10
+    },
+    card2:{
+        backgroundColor:'#f4f4f4',
+        height:50,
+        borderRadius:8,
+        padding:10,
+        marginBottom:10
     }
 })
 
@@ -63,6 +70,19 @@ class ScheduleDetails extends React.Component{
                 </View>
 
                 <Text style={styles.header}>TIME SCHEDULE</Text>
+                <View style={styles.card2}>
+                    <Text style={{fontWeight:'bold', fontSize:17, marginBottom:5}}>{this.props.DATA[0].scheduleTime}</Text>
+                </View>
+                
+                <Text style={styles.header}>CLOCK IN</Text>
+                <View style={styles.card2}>
+                    <Text style={{fontWeight:'bold', fontSize:17, marginBottom:5}}>{this.props.DATA[0].clockIn}</Text>
+                </View>
+                
+                <Text style={styles.header}>CLOCK OUT</Text>
+                <View style={styles.card2}>
+                    <Text style={{fontWeight:'bold', fontSize:17, marginBottom:5}}>{this.props.DATA[0].clockOut}</Text>
+                </View>
             </View>
         );
     }

@@ -23,6 +23,8 @@ DATA:[ {
   destination:'Mediterania',
   address:'Main Lobby Lt 5 Apartemen Boulevard',
   scheduleTime:'08.00 - 17.00',
+  clockIn:'--:--',
+  clockOut:'--:--'
 },
 {
   id:1,
@@ -33,7 +35,9 @@ DATA:[ {
   image:'https://ik.imagekit.io/tvlk/blog/2020/05/Ascott-Sudirman-Jakarta.jpeg',
   address:'Main Lobby Lt 5 Apartemen Boulevard',
   destination:'Mediterania 2',
-  scheduleTime:'09.00 - 19.00'
+  scheduleTime:'09.00 - 19.00',
+  clockIn:'--:--',
+  clockOut:'--:--'
 },
 {
   id:2,
@@ -45,7 +49,8 @@ DATA:[ {
   address:'Main Lobby Lt 5 Apartemen Boulevard',
   destination:'Mediterania 3',
   scheduleTime:'09.00 - 19.00',
-
+  clockIn:'--:--',
+  clockOut:'--:--'
 },{
   id:3,
   day:'Monday',
@@ -55,7 +60,9 @@ DATA:[ {
   image:'https://ik.imagekit.io/tvlk/blog/2020/05/Ascott-Sudirman-Jakarta.jpeg',
   address:'Main Lobby Lt 5 Apartemen Boulevard',
   destination:'Mediterania 4',
-  scheduleTime:'09.00 - 19.00'
+  scheduleTime:'09.00 - 19.00',
+  clockIn:'--:--',
+  clockOut:'--:--'
 },{
   id:4,
   day:'Tuesday',
@@ -65,7 +72,9 @@ DATA:[ {
   image:'https://ik.imagekit.io/tvlk/blog/2020/05/Ascott-Sudirman-Jakarta.jpeg',
   address:'Main Lobby Lt 5 Apartemen Boulevard',
   destination:'Mediterania 5',
-  scheduleTime:'09.00 - 19.00'
+  scheduleTime:'09.00 - 19.00',
+  clockIn:'--:--',
+  clockOut:'--:--'
 },{
   id:5,
   day:'Wednesday',
@@ -75,7 +84,9 @@ DATA:[ {
   image:'https://ik.imagekit.io/tvlk/blog/2020/05/Ascott-Sudirman-Jakarta.jpeg',
   address:'Main Lobby Lt 5 Apartemen Boulevard',
   destination:'Mediterania 6',
-  scheduleTime:'09.00 - 19.00'
+  scheduleTime:'09.00 - 19.00',
+  clockIn:'--:--',
+  clockOut:'--:--'
 },{
   id:6,
   day:'Thursday',
@@ -85,7 +96,9 @@ DATA:[ {
   image:'https://ik.imagekit.io/tvlk/blog/2020/05/Ascott-Sudirman-Jakarta.jpeg',
   address:'Main Lobby Lt 5 Apartemen Boulevard',
   destination:'Mediterania 7',
-  scheduleTime:'09.00 - 19.00'
+  scheduleTime:'09.00 - 19.00',
+  clockIn:'--:--',
+  clockOut:'--:--'
 },
 ]
 }
