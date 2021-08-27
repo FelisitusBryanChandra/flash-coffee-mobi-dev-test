@@ -3,13 +3,13 @@ import {Alert, StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import {Agenda} from 'react-native-calendars';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { connect } from 'react-redux';
 
 
-
-export default class Schedule extends Component {
+class Schedule extends React.Component {
   state = {
     items:{
-        '2021-04-07': [
+        "2021-04-07": [
             {
               name: 'Mediterania',
               height: 95,
@@ -33,21 +33,22 @@ export default class Schedule extends Component {
       }
   };
 
-
-
-  render() {
+  
+  renderEmptyDate() {
     return (
-        <Agenda
-            items={this.state.items}
-            loadItemsForMonth={this.loadItems.bind(this)}
-            selected={'2021-04-07'}
-            renderItem={this.renderItem.bind(this)}
-            renderEmptyDate={this.renderEmptyDate.bind(this)}
-            rowHasChanged={this.rowHasChanged.bind(this)}
-            showClosingKnob={true}
-        />
-      
+      <View style={styles.emptyDate}>
+        <Text style={{fontWeight:'bold'}}>NO SCHEDULE</Text>
+      </View>
     );
+  }
+
+  rowHasChanged(r1, r2) {
+    return r1.name !== r2.name;
+  }
+
+  timeToString(time) {
+    const date = new Date(time);
+    return date.toISOString().split('T')[0];
   }
 
   loadItems(day) {
@@ -82,29 +83,40 @@ export default class Schedule extends Component {
         style={[styles.item, {height: item.height}]}
         onPress={() => this.props.navigation.navigate('ScheduleDetails')}
       >
-        <Text style={{fontSize:25, fontWeight:'bold'}}>{item.name}</Text>
+        <Text style={{fontSize:25, fontWeight:'bold'}}>{this.props.DATA[0].destination}</Text>
         <Text style={{fontSize:15}}>{item.scheduleTime}</Text>
       </TouchableOpacity>
     );
   }
 
-  renderEmptyDate() {
+  componentDidMount(){
+    console.log(this.props.DATA)
+  }
+
+  render() {
     return (
-      <View style={styles.emptyDate}>
-        <Text style={{fontWeight:'bold'}}>NO SCHEDULE</Text>
-      </View>
+        <Agenda
+            items={this.state.items}
+            loadItemsForMonth={this.loadItems.bind(this)}
+            selected={'2021-04-07'}
+            renderItem={this.renderItem.bind(this)}
+            renderEmptyDate={this.renderEmptyDate.bind(this)}
+            rowHasChanged={this.rowHasChanged.bind(this)}
+            showClosingKnob={true}
+        />
+      
     );
   }
 
-  rowHasChanged(r1, r2) {
-    return r1.name !== r2.name;
-  }
+}
 
-  timeToString(time) {
-    const date = new Date(time);
-    return date.toISOString().split('T')[0];
+function mapStateToProps(state){
+  return{
+      DATA: state.DATA
   }
 }
+
+export default connect(mapStateToProps)(Schedule);
 
 const styles = StyleSheet.create({
   item: {
